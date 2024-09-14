@@ -4,13 +4,26 @@ import axios from "axios";
 function Signup() {
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {
-    const response = axios.post(
-      "https://quickcart-zow4.onrender.com/api/user/register",
-      data,
-      {
-        withCredentials: true,
+    try {
+      const response = axios.post(
+        "https://quickcart-zow4.onrender.com/api/user/register",
+        data,
+        {
+          withCredentials: true,
+        }
+      );
+      if (response.status === 200) {
+        alert("Signup successful");
       }
-    );
+    } catch (error) {
+      if (error.response) {
+        alert(error.response.data.message);
+      } else if (error.request) {
+        alert("No response from server");
+      } else {
+        alert("Error");
+      }
+    }
   };
   return (
     <div className="bg-gradient-to-r from-gray-800 to-gray-900 min-h-screen flex items-center justify-center">
