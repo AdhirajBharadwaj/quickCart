@@ -1,5 +1,5 @@
 import Product from "../models/product.model.js";
-import ApiFeatures from "../utils/ApiFeatures.js";
+import ApiFeatures from "../utils/apiFeatures.js";
 // const manyproducts=[
 //  {   name:"Laptop 4",
 //     price:55000,
