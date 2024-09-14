@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar";
-import SearchFilterBar from "../Components/SearchFilterBar";
+import SearchFilterBar from "../components/SearchFilterBar";
 
 function AllProducts() {
   const [products, setProducts] = useState([]);
