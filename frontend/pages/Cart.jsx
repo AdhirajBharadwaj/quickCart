@@ -12,14 +12,14 @@ function Cart() {
       try {
         // Attempt to fetch cart items
         const response = await axios.get(
-          "http://localhost:8000/api/user/cart",
+          "https://quickcart-zow4.onrender.com/api/user/cart",
           { withCredentials: true }
         );
         // Using Promise.all to wait for all promises to resolve and then storing the results
         const cartproducts = await Promise.all(
           response.data.cart.map(async (item) => {
             const product = await axios.get(
-              `http://localhost:8000/api/product/${item.productId}`
+              `https://quickcart-zow4.onrender.com/api/product/${item.productId}`
             );
             return { product: product.data.product, quantity: item.quantity };
           })
@@ -44,7 +44,7 @@ function Cart() {
   const handleRemoveItem = async (productId) => {
     try {
       const response = await axios.post(
-        `http://localhost:8000/api/user/removefromcart`,
+        `https://quickcart-zow4.onrender.com/api/user/removefromcart`,
         { productId },
         { withCredentials: true }
       );
@@ -65,7 +65,7 @@ function Cart() {
   const handleQuantityChange = async (productId, newQuantity) => {
     try {
       const response = await axios.post(
-        `http://localhost:8000/api/user/addtocart`,
+        `https://quickcart-zow4.onrender.com/api/user/addtocart`,
         { productId, quantity: newQuantity },
         { withCredentials: true }
       );

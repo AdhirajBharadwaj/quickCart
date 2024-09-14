@@ -4,9 +4,13 @@ import axios from "axios";
 function Signup() {
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {
-    const response = axios.post("http://localhost:8000/api/user/signup", data, {
-      withCredentials: true,
-    });
+    const response = axios.post(
+      "https://quickcart-zow4.onrender.com/api/user/signup",
+      data,
+      {
+        withCredentials: true,
+      }
+    );
   };
   return (
     <div className="bg-gradient-to-r from-gray-800 to-gray-900 min-h-screen flex items-center justify-center">

@@ -8,7 +8,7 @@ function Login() {
   const onSubmit = async (data) => {
     // Send login request with credentials to allow cookies
     const response = await axios.post(
-      "http://localhost:8000/api/user/login",
+      "https://quickcart-zow4.onrender.com/api/user/login",
       data,
       { withCredentials: true }
     );
