@@ -14,9 +14,8 @@ function Signup() {
           withCredentials: true,
         }
       );
-      if (response.status === 200) {
-        navigate("/login");
-      }
+
+      navigate("/login");
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message);
