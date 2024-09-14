@@ -15,7 +15,7 @@ function AllProducts() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://quickcart-zow4.onrender.com/api/product?${searchQuery}`
+          `https://quickcart-xjp1.onrender.com/api/product?${searchQuery}`
         );
         setProducts(response.data.products);
         setFilteredProducts(response.data.products);
@@ -36,7 +36,7 @@ function AllProducts() {
   const handleSearch = async (searchTerm) => {
     try {
       const response = await axios.get(
-        `https://quickcart-zow4.onrender.com/api/product?search=${searchTerm}`
+        `https://quickcart-xjp1.onrender.com/api/product?search=${searchTerm}`
       );
       setFilteredProducts(response.data.products);
     } catch (error) {
@@ -52,7 +52,7 @@ function AllProducts() {
       case "price_asc": {
         sorted = (
           await axios.get(
-            `https://quickcart-zow4.onrender.com/api/product?sort=price${queryprice}${currcat}`
+            `https://quickcart-xjp1.onrender.com/api/product?sort=price${queryprice}${currcat}`
           )
         ).data.products;
         break;
@@ -60,7 +60,7 @@ function AllProducts() {
       case "price_desc": {
         sorted = (
           await axios.get(
-            `https://quickcart-zow4.onrender.com/api/product?sort=-price${queryprice}${currcat}`
+            `https://quickcart-xjp1.onrender.com/api/product?sort=-price${queryprice}${currcat}`
           )
         ).data.products;
         break;
@@ -68,7 +68,7 @@ function AllProducts() {
       case "name_asc": {
         sorted = (
           await axios.get(
-            `https://quickcart-zow4.onrender.com/api/product?sort=name${queryprice}${currcat}`
+            `https://quickcart-xjp1.onrender.com/api/product?sort=name${queryprice}${currcat}`
           )
         ).data.products;
         break;
@@ -76,7 +76,7 @@ function AllProducts() {
       case "name_desc": {
         sorted = (
           await axios.get(
-            `https://quickcart-zow4.onrender.com/api/product?sort=-name${queryprice}${currcat}`
+            `https://quickcart-xjp1.onrender.com/api/product?sort=-name${queryprice}${currcat}`
           )
         ).data.products;
         break;
@@ -93,7 +93,7 @@ function AllProducts() {
     let currcat = querycat === "" ? "" : `&category=${querycat}`;
     const filtered = (
       await axios.get(
-        `https://quickcart-zow4.onrender.com/api/product?price[gte]=${min}&price[lte]=${max}${currcat}`
+        `https://quickcart-xjp1.onrender.com/api/product?price[gte]=${min}&price[lte]=${max}${currcat}`
       )
     ).data.products;
     setFilteredProducts(filtered);
@@ -104,14 +104,14 @@ function AllProducts() {
     if (category === "All") {
       setQuerycat("");
       setFilteredProducts(
-        (await axios.get(`https://quickcart-zow4.onrender.com/api/product`))
+        (await axios.get(`https://quickcart-xjp1.onrender.com/api/product`))
           .data.products
       );
     } else {
       setQuerycat(category);
       const filtered = (
         await axios.get(
-          `https://quickcart-zow4.onrender.com/api/product?category=${category}`
+          `https://quickcart-xjp1.onrender.com/api/product?category=${category}`
         )
       ).data.products;
       setFilteredProducts(filtered);
@@ -119,7 +119,7 @@ function AllProducts() {
   };
   const handleAddToCart = async (product) => {
     const response = await axios.post(
-      "https://quickcart-zow4.onrender.com/api/user/addtocart",
+      "https://quickcart-xjp1.onrender.com/api/user/addtocart",
       {
         productId: product._id,
         quantity: 1,

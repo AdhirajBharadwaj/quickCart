@@ -6,7 +6,7 @@ function Signup() {
   const onSubmit = async (data) => {
     try {
       const response = axios.post(
-        "https://quickcart-zow4.onrender.com/api/user/register",
+        "https://quickcart-xjp1.onrender.com/api/user/register",
         data,
         {
           withCredentials: true,

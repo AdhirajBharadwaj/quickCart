@@ -14,7 +14,7 @@ function Home() {
     // Fetch products from the API
     const fetchProducts = async () => {
       const response = await axios.get(
-        "https://quickcart-zow4.onrender.com/api/product"
+        "https://quickcart-xjp1.onrender.com/api/product"
       );
       setProducts(response.data.products);
       setDisplayedProducts(response.data.products);
@@ -31,7 +31,7 @@ function Home() {
   const handleAddToCart = async (product) => {
     try {
       const response = await axios.post(
-        "https://quickcart-zow4.onrender.com/api/user/addtocart",
+        "https://quickcart-xjp1.onrender.com/api/user/addtocart",
         {
           productId: product._id,
           quantity: 1,
@@ -53,12 +53,12 @@ function Home() {
     try {
       if (category === "All") {
         const response = await axios.get(
-          "https://quickcart-zow4.onrender.com/api/product"
+          "https://quickcart-xjp1.onrender.com/api/product"
         );
         setDisplayedProducts(response.data.products);
       } else {
         const response = await axios.get(
-          `https://quickcart-zow4.onrender.com/api/product?category=${category}`
+          `https://quickcart-xjp1.onrender.com/api/product?category=${category}`
         );
         setDisplayedProducts(response.data.products);
       }
